@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "capacity-resume-controller"
+version = "0.3.0"
+description = "Deterministic T3 Code and Codex capacity-error supervisor"
+requires-python = ">=3.10"
+dependencies = ["websocket-client==1.9.2"]
+
+[project.scripts]
+resume-controller = "resume_controller.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["resume_controller*"]

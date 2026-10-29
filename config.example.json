@@ -1,0 +1,25 @@
+{
+  "state_dir": "~/.local/state/resume-controller",
+  "interval_seconds": 1800,
+  "retry_cooldown_seconds": 1800,
+  "max_attempts": null,
+  "max_retry_delay_seconds": 21600,
+  "reconciliation_grace_seconds": 60,
+  "adapters": [
+    {
+      "kind": "t3",
+      "name": "t3-local",
+      "command": ["t3"],
+      "projects": ["*"]
+    },
+    {
+      "kind": "codex",
+      "name": "codex-local",
+      "socket_path": "~/.codex/app-server-control/app-server-control.sock",
+      "namespace": "local-owner-server",
+      "ensure_owner_daemon": true,
+      "enroll_loaded_threads": true,
+      "thread_ids": []
+    }
+  ]
+}
